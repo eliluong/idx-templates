@@ -13,7 +13,7 @@
       if packageManager == "pnpm" then "pnpm create expo \"$WS_NAME\" --no-install --template blank"
       else if packageManager == "bun" then "bun create expo \"$WS_NAME\" --no-install --template blank"
       else if packageManager == "yarn" then "yarn create expo \"$WS_NAME\" --no-install --template blank" 
-      else "npm create expo \"$WS_NAME\" --no-install --template blank"
+      else "npm create-expo-app@latest \"$WS_NAME\" --no-install --template blank"
     }
     mkdir "$WS_NAME/.idx/"
     packageManager=${packageManager} j2 ${./devNix.j2} -o "$WS_NAME/.idx/dev.nix"
